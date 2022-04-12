@@ -13,7 +13,7 @@
 2. Install Docker Compose (Install instructions: https://docs.docker.com/compose/install/)
 3. Install `speedtest`, `jq` and `curl` or run `install.sh`
 4. Run `docker-compose up` to start InfluxDB and Grafana
-5. Configure a cronjob that runs `speedtest.sh` at your given interval ([Crontab-Guru](https://crontab.guru/))
+5. Configure a cronjob that runs `speedtest.sh` at your given interval ([Crontab-Guru](https://crontab.guru/))<br>
 Example for running the script every minute:
 ```
 crontab -e
