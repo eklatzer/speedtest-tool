@@ -4,6 +4,9 @@
 ## Parts
 * `speedtest.sh` is a script that is used to run a speedtest and report the values to a local InfluxDB
 * `docker-compose.yml` is used to start InfluxDB and Grafana with the needed configuration
+* `grafana` is used to predefine the needed dashboard in Grafana
+* `.env` is used to define variables
+* `install.sh` is used to install the needed cli-tools
 # Install
 
 1. Install the Docker Engine (Install instructions: https://docs.docker.com/engine/install/)
