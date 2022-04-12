@@ -8,10 +8,10 @@
 ###################################################################
 source <(sed $'s/\r$//' .env)
 
-result=$(/usr/bin/speedtest --format=json)
+result=$(/usr/bin/speedtest --accept-license --accept-gdpr --format=json)
 
-ping=$(jq '.ping.latency' <<< "${result}")
-download=$(jq '.download.bandwidth' <<< "${result}")
-upload=$(jq '.upload.bandwidth' <<< "${result}")
+ping=$(/usr/bin/jq '.ping.latency' <<< "${result}")
+download=$(/usr/bin/jq '.download.bandwidth' <<< "${result}")
+upload=$(/usr/bin/jq '.upload.bandwidth' <<< "${result}")
 
-curl -i -XPOST "http://localhost:8086/write?db=speedtest&u=${INFLUXDB_PASSWORD}&p=${INFLUXDB_PASSWORD}" --data-binary "results ping=${ping},download=${download},upload=${upload}"
+/usr/bin/curl -i -XPOST "http://localhost:8086/write?db=speedtest&u=${INFLUXDB_PASSWORD}&p=${INFLUXDB_PASSWORD}" --data-binary "results ping=${ping},download=${download},upload=${upload}"
