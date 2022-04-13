@@ -2,6 +2,7 @@
 # speedtest-tool
 `speedtest-tool` is used to gather and visualize speedtest statistics about your local network.
 <div style="text-align:center"><img src="https://github.com/eric0915/speedtest-tool/blob/master/structure.png?raw=true" alt="Structure of speedtest-tool"/></div>
+
 ## Parts
 * `speedtest.sh` is a script that is used to run a speedtest and report the values to a local InfluxDB
 * `docker-compose.yml` is used to start InfluxDB and Grafana with the needed configuration
